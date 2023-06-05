@@ -1,0 +1,131 @@
+/*Estilos comunes para todas las secciones*/
+html, body, .container-fluid {
+    height: 100%;
+  }
+
+body {
+    font-family: $fuente-principal;
+background-color:  $color-primario;
+color: $color-secundario; 
+overflow-x: hidden;
+}
+
+
+.nav-link, .nav-link.active, .navbar-nav .nav-link.active {
+    color: $color-secundario;
+&:hover {
+    color: $color-terciario;
+}
+}
+.navbar-toggler {
+    background-color:  $color-terciario;
+}
+
+
+
+.carrusel-item img {
+    height: 250px;
+    }
+
+    @media (min-width: $tablet) {       
+    .carrusel-item img {
+        height: 60vh;
+    }
+    }
+
+    @media (min-width: $desktop) {       
+        .carrusel-item img {
+            height: 80vh;
+        }
+        }
+
+/*animacion de h1*/
+        h1{
+            text-align: center;
+            margin-top: $espacio-medio;
+            color: #206A5D;
+            font-weight: 500px;
+            animation-duration: 2s;
+            animation-name: aparecer;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes aparecer{
+            0%{
+                opacity: 0;
+            }
+
+            100%{
+                opacity: 1;
+
+            }
+        }
+        
+/*todos los titles de los footers son h3*/
+        h2,h3 {
+            @include  flex-column-centrado;
+            padding: auto;
+            text-align: center;
+            margin: 20px;
+            font-size: $fuente-media;
+            color: #206A5D;
+            font-weight: 300px;
+        }
+
+        h4{
+          margin-left: 20px;
+            margin-top: $espacio-medio;
+            font-size: $fuente-media;
+        }
+
+        h5,h6 {
+            text-align: center;
+            margin-top: $espacio-mini;
+            font-size: $fuente-chica;
+            color: #206A5D;
+            font-weight: 600px;
+        }
+
+        p{
+            font-size: $fuente-media;
+            text-align: center;   
+            margin-top: $fuente-media;
+        }
+           
+
+                   
+        
+        footer{
+          @include  flex-column-centrado;
+             margin-left: 20px;
+            margin-top: $espacio-grande;
+
+                    /*ANIDACION*/
+            .container-redes  {
+                color: $color-terciario;
+                text-decoration: none;
+                font-size: 40px;
+
+                .redes{
+                    width: 40px;
+                }
+            }
+        }
+                      
+
+
+@media (min-width:768px) {
+    footer{
+          .container-redes  {
+              color: $color-terciario;
+              text-decoration: none;
+              font-size: 40px;
+
+              .redes{
+                  width: 40px;
+              }
+          }
+      }            
+    } 
+     
+  

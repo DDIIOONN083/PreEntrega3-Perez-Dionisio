@@ -1,0 +1,37 @@
+
+
+.card-group .img {     
+    @include medidas(450px,300px);
+@include flex-column-centrado;
+    padding-left: 50px;
+}  
+
+
+    /*Carrusel- presente en Huerta*/
+    .carousel-item img{
+        height: 300px;
+    }
+    
+    @media (min-width: 768px) {
+    #carouselExample{
+        width: 50%;
+        margin: 0 auto;
+    } 
+    
+    .carousel-item img{
+        height: 350px;
+    }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+        
+   
+    
+    

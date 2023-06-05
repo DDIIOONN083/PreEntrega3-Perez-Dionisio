@@ -1,0 +1,326 @@
+
+/*index aclarar a que me refiero */
+*{
+    margin:0;
+    padding: 0;
+  }
+
+  .header nav{
+    width: 100%;
+} 
+
+.container-fluid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: $espacio-chico;
+    }
+    
+    
+    @media(min-width: $tablet){
+        .container-fluid{
+            flex-direction: row;
+            gap: $espacio-medio;       
+            }
+            h2, h3 {
+            @include flex-row-centrado;
+                text-align: center;
+                
+                margin-top: $espacio-chico;
+                color: #206A5D;
+                font-weight: 400px;
+            }
+        }   
+
+
+        .menu-nav li a{
+            color: bisque;
+            font-weight: 500px;
+        }
+
+        a{
+            color: black;
+            &:hover{ color: yellow}
+            &:active{color: #c6c6c6;}
+            &:visited{color: greenyellow;}
+        }
+                
+
+        /*----------*/
+
+        
+        .banner{
+            background-image: url(../img/la-casa.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;/*parallax*/
+        height: 70vh;
+        @include flex-column-centrado;       
+    }
+ 
+
+    /*PADRE-CARDS*/     
+   
+    .padre-cards{
+        display: flex;
+        background-color:#FFF80A ;
+    /*    flex-direction: column;
+        align-items: center;
+        align-content: center;*/
+     
+     /*   @include flex-column-centrado;*/
+         gap: 20px;
+
+         .card-imagen{
+        @include medidas(100%,100%);
+        @include flex-column-centrado;
+        padding-left: 10px;
+             }
+        }   
+
+
+    @media (min-width:$tablet) {
+        .padre-cards{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        /*grid-template-columns: repeat(2, 1fr);*/
+    justify-items: center;
+    gap: 30px;
+    }  
+}
+
+/*reducir car a .card-imagen*/
+.card{
+    background-color: #FFCC29;
+    width: 18rem;
+    border-radius: 10px;
+    border-color: #FFF80A;
+    box-shadow: -35px 52px 96px -12px rgba(255,255,255,0.75);
+   /* @include borde-iluminacion-imagen;
+    @include flex-column-centrado;    */
+    padding: 10px;
+    margin-bottom: 10px;
+    gap: 8px;
+    
+
+
+    h4, p{
+        color: #D61C4E;
+    }
+    
+    
+    button{
+        background-color: $color-primario;
+        border: none;
+        padding: 4px;
+        cursor: pointer;
+        font-weight: 700;        
+    }
+}
+    
+
+
+     
+    
+      
+    
+    /*.photo{ 
+        display: block;
+        margin: 0 auto;
+    }*/
+
+
+    .photo{
+    @include medidas(900px,600px);
+    @include centrar-imagen;
+    padding-top: 20px;
+}
+
+
+
+    /*    .banner h1{
+            background-color:rgba(rgb(198, 20, 20), rgb(21, 253, 21), rgb(64, 64, 65), 0.2);
+        }*/        
+
+
+
+    .botones{
+        margin-left: 120px;   
+        margin-top: 30px;        
+        padding: 5px 10px;
+        border-radius: 20px;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap:wrap          
+    }
+
+    .boton{
+        @extend .botones;
+        background-color: #75c042;
+    }
+
+
+
+/*odd impares-even -pares*/
+.otra-lista li:nth-child(odd){
+    background-color: orange;
+}
+
+.container-labels{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 50px;
+     flex-wrap:wrap
+
+     label {
+        cursor: pointer;
+        padding: 8px 15px;
+        }   
+    }
+
+
+    /*pseudos aplicado a los diferentes botones
+    de la pagina principal*/
+    .container-labels label:nth-child(odd){
+        background-color: brown;
+        &:hover {
+           background-color:orangered;
+        }
+        border-radius: 10px;
+        border-color: #ffd000;
+       
+        box-shadow: -35px 52px 96px -12px rgb(255, 247, 0);
+        &:hover {
+            color: greenyellow;
+        }  
+    }
+
+    .container-labels label:nth-child(even){
+         background-color: aliceblue;
+        &:hover {
+            background-color:orangered;
+         }
+        border-radius: 10px;
+        border-color: chocolate;
+        &:hover {
+            color: greenyellow;
+        }  
+        box-shadow: -35px 52px 96px -12px rgba(255,255,255,0.75);
+        &:hover {
+            color: $color-terciario;
+        }    
+    }
+
+    /*ocultar los radio*/
+#artes, #cursos,#voluntariados,
+#alojamiento{
+    display: none;
+}
+
+/*ocultar todo*/
+.artes, .cursos, .voluntariados, .alojamiento {
+    display: none;
+    }
+
+    #artes:checked ~.padre-cards .artes,
+    #cursos:checked ~ .padre-cards .cursos,
+    #voluntariados:checked ~.padre-cards .voluntariados,
+    #alojamiento:checked ~.padre-cards .alojamiento
+    {    
+        display: flex;
+    }
+
+
+    .padre-banners{
+        margin: 0 auto;
+    }
+    
+    .hijo-banners{
+        text-align: center;
+    }
+
+    
+
+
+
+
+
+
+/*Fotos Tamaño*/
+.logo{
+    @include medidas(100px,100px);
+    @include centrar-imagen;
+    @include borde-iluminacion-imagen;
+}
+
+
+/*ANIMACION-BARRA DE CARGA*/
+.section-barra{
+    display: flex;
+    justify-content: center;
+    }
+    
+    .barra-progreso{
+        margin-top: 30px;
+        width: 60%;
+        border: solid 1px;
+        height: 15px;
+        }
+
+    .barra-rellena{
+        border:  solid 1px;
+        height: 13px;
+        width: 100%;
+        background-color: greenyellow;
+      
+        animation: rellenando 5s;
+       
+    }
+
+    @keyframes rellenando {
+        0% {
+            width: 0%;
+                }
+                100%{
+                    width: 100%;
+                    opacity: 0.0;
+                }
+                
+    }
+
+    .fade, .barra-rellena {
+         
+        opacity: 0.8;
+        -webkit-transition: opacity 0.3s;
+       transition: opacity 0.5s;
+    }
+    
+    .fade:hover {
+        opacity:0; 
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    
